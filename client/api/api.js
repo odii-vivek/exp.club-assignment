@@ -9,3 +9,12 @@ export const loginUser = async (credentials) => {
 export const registerUser = async (userData) => {
   return await axios.post(`${API_URL}/auth/register`, userData);
 };
+
+// Function to handle logout
+export const logoutUser = async (token) => {
+  return await axios.post(`${API_URL}/auth/logout`, {}, {
+    headers: {
+      'Authorization': `Bearer ${token}`
+    }
+  });
+};

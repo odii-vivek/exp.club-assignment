@@ -103,3 +103,15 @@ exports.login = async (req, res) => {
     res.status(500).json({ msg: 'Server error' });
   }
 };
+
+exports.logout = async (req, res) => {
+  try {
+    // Here you would handle the token blacklist if using one.
+    // For simplicity, just send a response.
+
+    res.status(200).json({ msg: 'Logged out successfully' });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: 'Server error' });
+  }
+};

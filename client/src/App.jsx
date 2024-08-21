@@ -6,7 +6,7 @@ import Register from './components/Register';
 // import BookList from './components/BookList';
 // import BookDiscovery from './components/BookDiscovery';
 // import Matchmaking from './components/Matchmaking';
-// import Header from './components/Header';
+import Header from './components/Header';
 // import EditBook from './components/EditBook';
 // import CreateBook from './components/CreateBook';
 // import BookDetails from './components/BookDetails';
@@ -16,7 +16,7 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Header /> */}
+        <Header />
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

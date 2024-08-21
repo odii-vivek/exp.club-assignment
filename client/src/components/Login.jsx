@@ -39,9 +39,9 @@ const Login = () => {
   };
 
   return (
-    <div className="max-h-screen bg-gray-200 flex items-center justify-center">
-      <div className="bg-gray-100 p-5 flex rounded-2xl shadow-lg max-w-3xl">
-        <div className="md:w-1/2 px-5">
+    <div className="min-h-screen bg-gray-200 flex items-center justify-center">
+      <div className="bg-gray-100 p-5 flex rounded-2xl shadow-lg max-w-3xl w-full md:w-1/2">
+        <div className="w-full px-5">
           <h2 className="text-2xl font-bold text-slate-700">Login</h2>
           <p className="text-sm mt-4 text-slate-700">If you have an account, please login</p>
 
@@ -109,10 +109,10 @@ const Login = () => {
           </div>
         </div>
 
-        <div className="w-1/2 md:block hidden">
+        <div className="hidden md:block w-1/2">
           <img
             src="../logo.png"
-            className="rounded-2xl"
+            className="rounded-2xl w-full h-full object-cover"
             alt="page img"
           />
         </div>
