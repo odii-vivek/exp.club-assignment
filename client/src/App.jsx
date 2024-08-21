@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
-// import Register from './components/Register';
+import Register from './components/Register';
 // import HomePage from './components/HomePage';
 // import BookList from './components/BookList';
 // import BookDiscovery from './components/BookDiscovery';
@@ -18,8 +18,8 @@ function App() {
       <div>
         {/* <Header /> */}
         <Routes>
-          <Route path="/" element={<Login />} />
-          {/* <Route path="/register" element={<Register />} /> */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           {/* <Route path="/home" element={<HomePage />} />
           <Route path="/books" element={<BookList />} />
           <Route path="/books/:bookId" element={<BookDetails />} />
