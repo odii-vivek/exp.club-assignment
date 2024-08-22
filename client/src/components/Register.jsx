@@ -12,23 +12,24 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     if (name.trim() === '' || email.trim() === '' || password.trim() === '') {
       setError('Please fill in all fields.');
       return;
     }
-
+  
     setIsLoading(true);
     setError('');
-
+  
     try {
       const response = await registerUser({ name, email, password });
-      const { token } = response.data;
-
-      // Store the token and set user as logged in
+      const { token, user } = response.data;
+  
+      // Store the token and user data
       localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('isLoggedIn', 'true');
-
+  
       // Redirect to home page
       navigate('/home');
     } catch (err) {
@@ -38,6 +39,7 @@ const Register = () => {
       setIsLoading(false);
     }
   };
+  
 
   return (
     <div className="max-h-screen bg-gray-200 flex items-center justify-center">

@@ -18,6 +18,10 @@ const BookSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User',
     required: true,
+  },
+  image: {
+    type: String, // Store the path or URL of the image
+    default: null,
   }
 });
 

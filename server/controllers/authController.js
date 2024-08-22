@@ -51,7 +51,14 @@ exports.register = async (req, res) => {
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.status(201).json({ token });
+        res.status(201).json({
+          token,
+          user: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+          },
+        });
       }
     );
   } catch (err) {
@@ -59,6 +66,7 @@ exports.register = async (req, res) => {
     res.status(500).json({ msg: 'Server error' });
   }
 };
+
 
 // Login a user
 exports.login = async (req, res) => {
@@ -95,7 +103,14 @@ exports.login = async (req, res) => {
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
-        res.json({ token });
+        res.json({
+          token,
+          user: {
+            id: user.id,
+            name: user.name,
+            email: user.email,
+          },
+        });
       }
     );
   } catch (err) {
@@ -103,6 +118,7 @@ exports.login = async (req, res) => {
     res.status(500).json({ msg: 'Server error' });
   }
 };
+
 
 exports.logout = async (req, res) => {
   try {

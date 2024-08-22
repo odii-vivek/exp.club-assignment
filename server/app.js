@@ -1,13 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth');
+const bookRoutes = require('./routes/book');
 
 dotenv.config(); // Load environment variables
 
 const app = express();
-
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Middleware
 app.use(express.json()); // For parsing JSON bodies
 app.use(cors()); // Enable CORS for cross-origin requests
@@ -20,6 +22,7 @@ mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 // Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/book', bookRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;

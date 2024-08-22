@@ -22,10 +22,11 @@ const Login = () => {
 
     try {
       const response = await loginUser({ email, password });
-      const { token } = response.data;
+      const { token, user } = response.data;
 
-      // Store the token and set user as logged in
+      // Store the token and user data
       localStorage.setItem('token', token);
+      localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('isLoggedIn', 'true');
 
       // Redirect to home page
@@ -37,6 +38,7 @@ const Login = () => {
       setIsLoading(false);
     }
   };
+
 
   return (
     <div className="min-h-screen bg-gray-200 flex items-center justify-center">
