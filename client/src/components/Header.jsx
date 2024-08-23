@@ -76,12 +76,17 @@ const Header = () => {
                     </Link>
 
                     {isLoggedIn ? (
-                        <li
-                            onClick={handleLogout}
-                            className='text-color4 hover:text-color3 hover:scale-110 cursor-pointer'
-                        >
-                            Logout
-                        </li>
+                        <>
+                            <Link to='/my-listings'>
+                                <li className='text-color4 hover:text-color3 hover:scale-110'>Your Listings</li>
+                            </Link>
+                            <li
+                                onClick={handleLogout}
+                                className='text-color4 hover:text-color3 hover:scale-110 cursor-pointer'
+                            >
+                                Logout
+                            </li>
+                        </>
                     ) : (
                         <>
                             <Link to='/register'>

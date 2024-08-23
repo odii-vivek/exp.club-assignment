@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Header from './components/Header';
 // import EditBook from './components/EditBook';
 import CreateBook from './components/CreateBook';
+import MyListings from './components/MyListings';
 // import BookDetails from './components/BookDetails';
 // import ExchangeRequests from './components/ExchangeRequests';
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/book/create" element={<CreateBook />} />
           <Route path="/" element={<Home />} />
+          <Route path="/my-listings" element={<MyListings />} />
           {/* 
           <Route path="/books" element={<BookList />} />
           <Route path="/books/:bookId" element={<BookDetails />} />

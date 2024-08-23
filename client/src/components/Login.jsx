@@ -30,7 +30,7 @@ const Login = () => {
       localStorage.setItem('isLoggedIn', 'true');
 
       // Redirect to home page
-      navigate('/home');
+      navigate('/');
     } catch (err) {
       const errMsg = err.response?.data?.msg || 'An error occurred. Please try again.';
       setError(errMsg);
@@ -38,6 +38,7 @@ const Login = () => {
       setIsLoading(false);
     }
   };
+
 
 
   return (

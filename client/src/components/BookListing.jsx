@@ -25,8 +25,11 @@ const BookListing = ({ book }) => {
           <p className='text-sm text-gray-600 line-clamp-2'>
             {book.description}
           </p>
-          <p className='text-slate-500 mt-2 font-semibold '>
+          <p className='text-slate-500 mt-2 font-semibold'>
             Genre: {book.genre}
+          </p>
+          <p className='text-slate-500 text-sm'>
+            Listed By: {book.owner.name}
           </p>
         </div>
       </Link>

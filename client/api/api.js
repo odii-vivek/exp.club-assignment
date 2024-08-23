@@ -57,3 +57,29 @@ export const fetchBooks = async () => {
     throw error;
   }
 };
+
+export const fetchUserListings = async (userId) => {
+  try {
+    const response = await axios.get(`${API_URL}/book/user/${userId}`);
+    console.log(response.data);
+    return response.data; // Return the fetched books
+  } catch (error) {
+    console.error("Error fetching books by user ID:", error);
+    throw error; // Rethrow the error for further handling
+  }
+};
+
+// Delete Book
+export const deleteListing = async (listingId) => {
+  const token = localStorage.getItem('token');
+  try {
+    await axios.delete(`${API_URL}/book/${listingId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+  } catch (error) {
+    console.error('Error deleting the book:', error);
+    throw error; // Rethrow the error for further handling
+  }
+};

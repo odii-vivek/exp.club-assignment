@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const upload = require('../middleware/upload'); // Adjust the path as needed
-const { createBook, getBooks, getBookById, updateBook, deleteBook } = require('../controllers/bookController'); // Adjust the path as needed
+const { createBook, getBooks, getBookById, updateBook, deleteBook , getBooksByUserId } = require('../controllers/bookController'); // Adjust the path as needed
 
 // Middleware for user authentication
 const authMiddleware = require('../middleware/auth'); // Adjust the path as needed
@@ -12,5 +12,6 @@ router.post('/create', authMiddleware, upload.single('image'), createBook);
 router.get('/:id', getBookById);
 router.put('/:id', authMiddleware, upload.single('image'), updateBook);
 router.delete('/:id', authMiddleware, deleteBook);
+router.get('/user/:userId', getBooksByUserId);
 
 module.exports = router;
